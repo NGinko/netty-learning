@@ -27,10 +27,12 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter {
                 System.out.flush();
             }*/
             System.out.println(in.toString(CharsetUtil.US_ASCII));
-
+            //这里调用write可以将接收到的消息逐字的写入到的消息。
+            // 调用write的话不用再像前面那样release，netty自己会release
+            ctx.writeAndFlush(in);
         }finally {
             //也可以直接in.release()
-            ReferenceCountUtil.release(msg);
+            //ReferenceCountUtil.release(msg);
         }
     }
 
