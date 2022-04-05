@@ -15,7 +15,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
  */
 public class TimeServerHandle extends ChannelInboundHandlerAdapter {
 
-    //active方法会在连接建立同时准备生成流量的时候建立
+    //active方法会在channel建立同时准备生成流量时调用
     @Override
     public void channelActive(final ChannelHandlerContext ctx) {
         //为了发送一条新的消息，需要分配一个新的缓冲区其中包含信息。发送的信息32位，所以这里容量最小要4字节。

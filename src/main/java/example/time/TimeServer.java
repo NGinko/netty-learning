@@ -65,7 +65,6 @@ public class TimeServer {
             bossGroup.shutdownGracefully();
         }
 
-
     }
 
     public static void main(String[] args) throws Exception {
@@ -73,7 +72,7 @@ public class TimeServer {
         if (args.length > 0) {
             port = Integer.parseInt(args[0]);
         }
-        new example.discard.DiscardServer(port).run();
+        new TimeServer(port).run();
         System.out.println("Server start");
     }
 
