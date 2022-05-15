@@ -16,7 +16,7 @@ import static utils.ByteBufferUtil.debugRead;
  * @date 2022-05-02 12:25
  */
 @Slf4j
-public class Server {
+public class BasicServer {
 
     public static void main(String[] args) throws IOException {
         ByteBuffer buffer = ByteBuffer.allocate(16);
