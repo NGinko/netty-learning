@@ -15,9 +15,10 @@ public class Client {
         SocketChannel sc = SocketChannel.open();
         sc.connect(new InetSocketAddress("localhost", 8080));
         System.out.println("waiting ...");
-        /**
-         * sc.write(Charset.defaultCharset().encode("0123\n456789abcdef"));
-         * Charset.defaultCharset().decode()
-         */
+        sc.write(Charset.defaultCharset().encode("0123\n456789abcdef"));
+        System.in.read();
+        //Charset.defaultCharset().decode();
+
+
     }
 }
